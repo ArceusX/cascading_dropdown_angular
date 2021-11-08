@@ -1,0 +1,33 @@
+<div class="content">
+  <h2>Cascading/Dependent Dropdown With Angular.js</h2>
+
+  <div class="card-container">
+    <label>Sport</label>
+    <select
+      placeholder="Sport"
+      [(ngModel)]="selectedSport"
+      (change)="changeSport($event)"
+    >
+      <option>--Choose Sport--</option>
+      <option *ngFor="let sport of sports">{{ sport.name }}</option>
+    </select>
+  </div>
+
+  <div class="card-container">
+    <label>Team</label>
+    <select placeholder="Team" (change)="changeTeam($event)">
+      <option>--Choose Team--</option>
+      <option *ngFor="let team of teams">{{ team.name }}</option>
+    </select>
+  </div>
+
+  <div class="card-container">
+    <label>Player</label>
+    <select placeholder="Player">
+      <option>--Choose Player--</option>
+      <option *ngFor="let player of players">{{ player }}</option>
+    </select>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
